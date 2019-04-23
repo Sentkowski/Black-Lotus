@@ -1,0 +1,44 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+
+.welcome-section {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  background-image: url("images/welcome-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.welcome-header {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center; }
+
+.welcome-logo-heading {
+  position: relative;
+  left: 0.5vw;
+  font-size: 7vw;
+  color: white;
+  align-self: center;
+  text-align: right;
+  text-transform: uppercase; }
+
+.welcome-logo {
+  height: 15vw; }
+
+.welcome-nav {
+  position: absolute;
+  bottom: 10vh;
+  left: calc(50vw - 70px); }
+
+.welcome-nav-icons {
+  width: 140px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between; }
+
+.welcome-icon {
+  width: 40px;
+  height: 40px;
+  opacity: 0.8; }
