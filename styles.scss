@@ -1,6 +1,34 @@
+@mixin cut-border($side, $reverse:"no") {
+    border: 2px solid white;
+    border-#{$side}: none;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-#{$side}: 2px solid white;
+        @if $side == 'top' or $side == 'bottom' {
+            height: 100%;
+            width: calc(95% - 20px);
+        } @else {
+            height: calc(95% - 10px);
+            width: 100%;
+        }
+        @if $reverse == 'reverse' {
+            bottom: -2px;
+            right: -2px;
+        } @else {
+            top: -2px;
+            left: -2px;
+        }
+        
+    }
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  }
+    background-color: black;
+}
 
 .welcome-section {
     position: relative;
@@ -49,4 +77,70 @@ body {
     width: 40px;
     height: 40px;
     opacity: 0.8;
+}
+
+.bloom-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.bloom-flower-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('images/bloom-flower.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1;
+    transform: scale(1.5);
+}
+
+.bloom-header-section {
+    width: 80%;
+    margin: 50px auto 0;
+}
+
+.bloom-heading {
+    font-size: 32px;
+    color: white;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.bloom-header-text {
+    font-size: 18px;
+    color: white;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+.singles-list {
+    margin: 40px 0;
+}
+
+.single-button {
+    position: relative;
+    background-color: transparent;
+    display: block;
+    margin: 0 auto 30px;
+    padding: 3px 8px;
+    font-size: 24px;
+    color: white;
+    opacity: 0.8;
+    font-variant: small-caps;
+    text-transform: lowercase;
+}
+
+.single-first {
+    @include cut-border(right, reverse);
+}
+
+.single-second {
+    @include cut-border(top);
+}
+
+.single-third {
+    @include cut-border(bottom, reverse);
 }
