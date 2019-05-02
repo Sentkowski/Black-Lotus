@@ -14,6 +14,7 @@ body {
 .welcome-header {
   margin-top: 10%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center; }
 
 .welcome-logo-heading {
@@ -27,6 +28,13 @@ body {
 
 .welcome-logo {
   height: 15vw; }
+
+.welcome-tagline {
+  margin: 5px 10% 0 30%;
+  text-align: right;
+  font-size: 18px;
+  color: white;
+  opacity: 0.8; }
 
 .welcome-nav {
   position: absolute;
@@ -183,24 +191,41 @@ body {
     bottom: -2px;
     right: -2px; }
 
-.member-photo-wrapper {
-  position: relative; }
-
-.member-photo {
+.band-photo-list {
+  display: flex;
+  height: 350px;
   width: 100%; }
 
-.member-photo-name {
+.members-photo {
+  position: relative;
+  width: calc(100%/3);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.8; }
+
+.simon-photo {
+  background-image: url("images/git2.jpg"); }
+
+.chris-photo {
+  background-image: url("images/git1.jpg");
+  border-left: 2px solid black; }
+
+.andrew-photo {
+  background-image: url("images/perk2.jpg");
+  border-left: 2px solid black; }
+
+.member-name {
   position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 32px;
-  text-transform: uppercase;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 24px;
   color: white;
-  opacity: 0.8;
-  background-color: black;
-  height: 40px;
-  transform-origin: bottom left;
-  transform: rotate(90deg); }
+  font-variant: small-caps;
+  text-transform: lowercase; }
 
 .about-heading {
   width: 80%;
@@ -252,7 +277,7 @@ body {
 .social-footer {
   box-sizing: border-box;
   overflow: hidden;
-  height: 300px;
+  height: 250px;
   position: relative;
   padding-top: 100px; }
 
@@ -263,14 +288,31 @@ body {
   opacity: 0.8; }
 
 .footer-icons-wrapper {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
-  margin: 50px auto;
-  width: 140px; }
+  margin: 15px auto;
+  width: 120px; }
 
 .footer-icon {
-  width: 50px;
-  height: 50px; }
+  width: 40px;
+  height: 40px; }
+
+.contact-text {
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  opacity: 0.8;
+  padding-bottom: 5px; }
+
+.mail-address {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  opacity: 0.8;
+  margin: auto; }
 
 .footer-logo {
   position: absolute;
@@ -282,10 +324,11 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.05; }
+  opacity: 0.15; }
 
 .footer-flower-right, .footer-flower-left {
   position: absolute;
+  z-index: 0;
   height: 300px;
   width: 300px;
   bottom: 0;
@@ -293,7 +336,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.05; }
+  opacity: 0.15; }
 
 .footer-flower-right {
   left: 0;
