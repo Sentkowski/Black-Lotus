@@ -16,6 +16,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }
+  @media only screen and (min-width: 600px) {
+    .welcome-header {
+      justify-content: flex-end;
+      margin: 5% 5% 0 0; } }
 
 .welcome-logo-heading {
   position: relative;
@@ -25,9 +29,16 @@ body {
   align-self: center;
   text-align: right;
   text-transform: uppercase; }
+  @media only screen and (min-width: 600px) {
+    .welcome-logo-heading {
+      font-size: 42px;
+      left: 3px; } }
 
 .welcome-logo {
   height: 15vw; }
+  @media only screen and (min-width: 600px) {
+    .welcome-logo {
+      height: 100px; } }
 
 .welcome-tagline {
   margin: 5px 10% 0 30%;
@@ -35,6 +46,10 @@ body {
   font-size: 18px;
   color: white;
   opacity: 0.8; }
+  @media only screen and (min-width: 600px) {
+    .welcome-tagline {
+      margin: 5px 0 0 65%;
+      font-size: 24px; } }
 
 .welcome-nav {
   position: absolute;
@@ -56,6 +71,14 @@ body {
   position: relative;
   overflow: hidden;
   margin-bottom: 50px; }
+  @media only screen and (min-width: 650px) {
+    .bloom-section {
+      min-height: 650px;
+      display: grid;
+      grid-template-areas: "tour header" "tour singles";
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center; } }
 
 .bloom-flower-image {
   position: absolute;
@@ -65,12 +88,33 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.1;
-  transform: scale(1.5); }
+  opacity: 0.05;
+  transform: scale(1.5);
+  animation: pulse 3s linear infinite alternate; }
+  @media only screen and (min-width: 650px) {
+    .bloom-flower-image {
+      top: 10%;
+      left: 10%;
+      height: 80%;
+      width: 80%; } }
+
+@keyframes pulse {
+  0% {
+    opacity: 0; }
+  60% {
+    opacity: 0.1; }
+  100% {
+    opacity: 0.1; } }
 
 .bloom-header-section {
   width: 80%;
   margin: 30px auto 0; }
+  @media only screen and (min-width: 650px) {
+    .bloom-header-section {
+      grid-area: header;
+      width: 300px;
+      align-self: end;
+      margin-bottom: 50px; } }
 
 .bloom-heading {
   font-size: 32px;
@@ -86,6 +130,11 @@ body {
 
 .singles-list {
   margin: 40px 0 60px; }
+  @media only screen and (min-width: 650px) {
+    .singles-list {
+      margin: 0;
+      grid-area: singles;
+      width: 300px; } }
 
 .single-button {
   position: relative;
@@ -98,6 +147,9 @@ body {
   opacity: 0.8;
   font-variant: small-caps;
   text-transform: lowercase; }
+  @media only screen and (min-width: 650px) {
+    .single-button {
+      margin: 0 0 30px; } }
 
 .single-first {
   border: 2px solid white;
@@ -141,6 +193,11 @@ body {
 .tour-container {
   width: 80%;
   margin: auto; }
+  @media only screen and (min-width: 650px) {
+    .tour-container {
+      grid-area: tour;
+      justify-self: end;
+      width: 300px; } }
 
 .tour-heading {
   padding-bottom: 5px;
@@ -169,7 +226,13 @@ body {
 .tour-place {
   padding-left: 20px; }
 
-.tour-show-more-button {
+.see-more-tour {
+  display: none; }
+  @media only screen and (min-width: 650px) {
+    .see-more-tour {
+      display: flex; } }
+
+.tour-show-more-button, .shop-link-button {
   position: relative;
   background-color: transparent;
   display: block;
@@ -181,7 +244,7 @@ body {
   text-transform: lowercase;
   border: 2px solid white;
   border-top: none; }
-  .tour-show-more-button::after {
+  .tour-show-more-button::after, .shop-link-button::after {
     content: '';
     display: block;
     position: absolute;
@@ -191,10 +254,21 @@ body {
     bottom: -2px;
     right: -2px; }
 
+@media only screen and (min-width: 650px) {
+  .about-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px; } }
+
 .band-photo-list {
   display: flex;
   height: 350px;
   width: 100%; }
+  @media only screen and (min-width: 650px) {
+    .band-photo-list {
+      margin-top: 50px;
+      order: 1; } }
 
 .members-photo {
   position: relative;
@@ -232,15 +306,29 @@ body {
   font-size: 32px;
   color: white;
   opacity: 0.8;
-  margin: 30px auto; }
+  margin: 30px auto 20px; }
+  @media only screen and (min-width: 650px) {
+    .about-heading {
+      margin: 0 0 20px calc(200px + (100vw - 650px) / 6);
+      width: 450px; } }
 
-.about-text {
+.about-text, .see-more-text {
   width: 80%;
   font-size: 18px;
   color: white;
   opacity: 0.8;
   margin: 15px auto;
   line-height: 1.4; }
+  @media only screen and (min-width: 650px) {
+    .about-text, .see-more-text {
+      margin: 15px 0 15px calc(200px + (100vw - 650px) / 6);
+      width: 450px; } }
+
+.see-more-text {
+  display: none; }
+  @media only screen and (min-width: 650px) {
+    .see-more-text {
+      display: block; } }
 
 .about-read-more-button {
   position: relative;
@@ -264,15 +352,84 @@ body {
     width: 100%;
     top: -2px;
     left: -2px; }
+  @media only screen and (min-width: 650px) {
+    .about-read-more-button {
+      display: none; } }
 
 .album-images-wrapper {
   margin: 50px 0;
   display: flex;
   justify-content: space-around; }
+  @media only screen and (min-width: 650px) {
+    .album-images-wrapper {
+      height: 350px;
+      justify-content: space-between;
+      position: absolute;
+      top: calc(50% - 350px);
+      left: calc(20px + (100vw - 650px) / 6);
+      flex-direction: column;
+      margin: 0; } }
 
 .album-image {
   width: 40vw;
   height: 40vw; }
+  @media only screen and (min-width: 650px) {
+    .album-image {
+      width: 150px;
+      height: 150px; } }
+
+.about-background {
+  display: none; }
+  @media only screen and (min-width: 650px) {
+    .about-background {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: calc(100% - 350px);
+      background-image: url("images/about-bg.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center right;
+      opacity: 0.3; } }
+
+.shop-section {
+  width: 80%;
+  margin: 0 auto 50px; }
+  @media only screen and (min-width: 650px) {
+    .shop-section {
+      min-width: 600px;
+      width: 90%;
+      max-width: 800px;
+      margin: 75px auto; } }
+
+.shop-heading {
+  display: inline-block;
+  font-size: 32px;
+  color: white;
+  opacity: 0.8;
+  padding-bottom: 5px;
+  border-bottom: 2px solid white; }
+
+.shop-items-images-list {
+  border-left: 2px solid white;
+  padding: 15px 0;
+  opacity: 0.8; }
+  @media only screen and (min-width: 650px) {
+    .shop-items-images-list {
+      display: flex;
+      width: 100%;
+      justify-content: space-around; } }
+
+.shop-item-image {
+  display: block;
+  width: 150px;
+  margin: 20px auto; }
+
+.see-more-shop {
+  display: none; }
+  @media only screen and (min-width: 650px) {
+    .see-more-shop {
+      display: block; } }
 
 .social-footer {
   box-sizing: border-box;
@@ -280,12 +437,18 @@ body {
   height: 250px;
   position: relative;
   padding-top: 100px; }
+  @media only screen and (min-width: 650px) {
+    .social-footer {
+      height: 300px; } }
 
 .footer-heading {
   text-align: center;
   font-size: 32px;
   color: white;
   opacity: 0.8; }
+  @media only screen and (min-width: 650px) {
+    .footer-heading {
+      margin-top: 20px; } }
 
 .footer-icons-wrapper {
   position: relative;
@@ -337,6 +500,10 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.15; }
+  @media only screen and (min-width: 650px) {
+    .footer-flower-right, .footer-flower-left {
+      height: 500px;
+      width: 500px; } }
 
 .footer-flower-right {
   left: 0;

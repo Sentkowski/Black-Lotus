@@ -45,6 +45,11 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    @media only screen and (min-width: 600px) {
+        justify-content: flex-end;
+        margin: 5% 5% 0 0;
+    }
 }
 
 .welcome-logo-heading {
@@ -55,10 +60,19 @@ body {
     align-self: center;
     text-align: right;
     text-transform: uppercase;
+
+    @media only screen and (min-width: 600px) {
+        font-size: 42px;
+        left: 3px;
+    }
 }
 
 .welcome-logo {
     height: 15vw;
+
+    @media only screen and (min-width: 600px) {
+        height: 100px;
+    }
 }
 
 .welcome-tagline {
@@ -67,6 +81,11 @@ body {
     font-size: 18px;
     color: white;
     opacity: 0.8;
+
+    @media only screen and (min-width: 600px) {
+        margin: 5px 0 0 65%;
+        font-size: 24px;
+    }
 }
 
 .welcome-nav {
@@ -92,6 +111,16 @@ body {
     position: relative;
     overflow: hidden;
     margin-bottom: 50px;
+
+    @media only screen and (min-width: 650px) {
+        min-height: 650px;
+        display: grid;
+        grid-template-areas: "tour header"
+                             "tour singles";
+        grid-template-rows:    1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
 }
 
 .bloom-flower-image {
@@ -102,13 +131,40 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.1;
+    opacity: 0.05;
     transform: scale(1.5);
+    animation: pulse 3s linear infinite alternate;
+
+    @media only screen and (min-width: 650px) {
+        top: 10%;
+        left: 10%;
+        height: 80%;
+        width: 80%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0.1;
+    }
 }
 
 .bloom-header-section {
     width: 80%;
     margin: 30px auto 0;
+
+    @media only screen and (min-width: 650px) {
+        grid-area: header;
+        width: 300px;
+        align-self: end;
+        margin-bottom: 50px;
+    }
 }
 
 .bloom-heading {
@@ -127,6 +183,12 @@ body {
 
 .singles-list {
     margin: 40px 0 60px;
+
+    @media only screen and (min-width: 650px) {
+        margin: 0;
+        grid-area: singles;
+        width: 300px;
+    }
 }
 
 .single-button {
@@ -140,6 +202,10 @@ body {
     opacity: 0.8;
     font-variant: small-caps;
     text-transform: lowercase;
+
+    @media only screen and (min-width: 650px) {
+        margin: 0 0 30px;
+    }
 }
 
 .single-first {
@@ -157,6 +223,12 @@ body {
 .tour-container {
     width: 80%;
     margin: auto;
+
+    @media only screen and (min-width: 650px) {
+        grid-area: tour;
+        justify-self: end;
+        width: 300px;
+    }
 }
 
 .tour-heading {
@@ -191,7 +263,15 @@ body {
     padding-left: 20px;
 }
 
-.tour-show-more-button {
+.see-more-tour {
+    display: none;
+
+    @media only screen and (min-width: 650px) {
+        display: flex;
+    }
+}
+
+.tour-show-more-button, .shop-link-button {
     position: relative;
     background-color: transparent;
     display: block;
@@ -204,10 +284,25 @@ body {
     @include cut-border(top, reverse);
 }
 
+.about-section {
+    @media only screen and (min-width: 650px) {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+
+    }
+}
+
 .band-photo-list {
     display: flex;
     height: 350px;
     width: 100%;
+
+    @media only screen and (min-width: 650px) {
+        margin-top: 50px;
+        order: 1;
+    }
 }
 
 .members-photo {
@@ -251,16 +346,34 @@ body {
     font-size: 32px;
     color: white;
     opacity: 0.8;
-    margin: 30px auto;
+    margin: 30px auto 20px;
+
+    @media only screen and (min-width: 650px) {
+        margin: 0 0 20px calc(200px + (100vw - 650px) / 6);
+        width: 450px;
+    }
 }
 
-.about-text {
+.about-text, .see-more-text {
     width: 80%;
     font-size: 18px;
     color: white;
     opacity: 0.8;
     margin: 15px auto;
     line-height: 1.4;
+
+    @media only screen and (min-width: 650px) {
+        margin: 15px 0 15px calc(200px + (100vw - 650px) / 6);
+        width: 450px;
+    }
+}
+
+.see-more-text {
+    display: none;
+
+    @media only screen and (min-width: 650px) {
+        display: block;
+    }
 }
 
 .about-read-more-button {
@@ -275,17 +388,99 @@ body {
     font-variant: small-caps;
     text-transform: lowercase;
     @include cut-border(left);
+
+    @media only screen and (min-width: 650px) {
+        display: none;
+    }
 }
 
 .album-images-wrapper {
     margin: 50px 0;
     display: flex;
     justify-content: space-around;
+
+    @media only screen and (min-width: 650px) {
+        height: 350px;
+        justify-content: space-between;
+        position: absolute;
+        top: calc(50% - 350px);
+        left: calc(20px + (100vw - 650px) / 6);
+        flex-direction: column;
+        margin: 0;
+    }
 }
 
 .album-image {
     width: 40vw;
     height: 40vw;
+
+    @media only screen and (min-width: 650px) {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.about-background {
+    display: none;
+
+    @media only screen and (min-width: 650px) {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 350px);
+        background-image: url('images/about-bg.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center right;
+        opacity: 0.3;
+    }
+}
+
+.shop-section {
+    width: 80%;
+    margin: 0 auto 50px;
+
+    @media only screen and (min-width: 650px) {
+        min-width: 600px;
+        width: 90%;
+        max-width: 800px;
+        margin: 75px auto;
+    }
+}
+
+.shop-heading {
+    display: inline-block;
+    font-size: 32px;
+    color: white;
+    opacity: 0.8;
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+}
+
+.shop-items-images-list {
+    border-left: 2px solid white;
+    padding: 15px 0;
+    opacity: 0.8;
+
+    @media only screen and (min-width: 650px) {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+.shop-item-image {
+    display: block;
+    width: 150px;
+    margin: 20px auto;
+}
+
+.see-more-shop {
+    display: none;
+
+    @media only screen and (min-width: 650px) {
+        display: block;
+    }
 }
 
 .social-footer {
@@ -294,6 +489,10 @@ body {
     height: 250px;
     position: relative;
     padding-top: 100px;
+
+    @media only screen and (min-width: 650px) {
+        height: 300px;
+    }
 }
 
 .footer-heading {
@@ -301,6 +500,10 @@ body {
     font-size: 32px;
     color: white;
     opacity: 0.8;
+
+    @media only screen and (min-width: 650px) {
+        margin-top: 20px;
+    }
 }
 
 .footer-icons-wrapper {
@@ -358,6 +561,11 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0.15;
+
+    @media only screen and (min-width: 650px) {
+        height: 500px;
+        width: 500px;
+    }
 }
 
 .footer-flower-right {
