@@ -346,8 +346,7 @@ body {
 
 .news-section-heading {
   font-size: 32px;
-  color: rgba(255, 255, 255, 0.8);
-  opacity: 0.8; }
+  color: rgba(255, 255, 255, 0.8); }
   @media only screen and (min-width: 650px) {
     .news-section-heading {
       text-align: center;
@@ -512,7 +511,9 @@ body {
   @media only screen and (min-width: 650px) {
     .about-text, .see-more-text {
       margin: 15px 0 15px calc(200px + (100vw - 650px) / 6);
-      width: 450px; } }
+      width: 450px;
+      position: relative;
+      z-index: 1; } }
 
 .see-more-text {
   display: none; }
@@ -585,6 +586,7 @@ body {
     .about-background {
       display: block;
       position: absolute;
+      z-index: 0;
       width: 100%;
       height: calc(100% - 350px);
       background-image: url("images/about-bg.jpg");
@@ -632,7 +634,7 @@ body {
 .social-footer {
   box-sizing: border-box;
   overflow: hidden;
-  height: 300px;
+  height: 320px;
   position: relative;
   padding-top: 100px; }
   @media only screen and (min-width: 650px) {
