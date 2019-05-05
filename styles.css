@@ -51,6 +51,57 @@ body {
       margin: 5px 0 0 65%;
       font-size: 24px; } }
 
+.page-nav {
+  position: absolute;
+  top: 20%;
+  left: 0px; }
+
+.page-nav-link {
+  margin: 15px;
+  margin-left: 0; }
+  @media only screen and (min-width: 650px) {
+    .page-nav-link {
+      margin: 25px;
+      margin-left: 0; } }
+
+.page-nav-link-text {
+  display: inline-block;
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  padding: 3px 5px 3px 5px;
+  background-color: rgba(0, 0, 0, 0.85);
+  text-decoration: none;
+  transform: translateX(-100%);
+  transition: padding 0.2s;
+  animation-name: slide-in;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards; }
+  .page-nav-link-text:hover {
+    padding-left: 15px; }
+  .page-nav-link-text.first {
+    animation-duration: 0.45s;
+    animation-delay: 0.5s; }
+  .page-nav-link-text.second {
+    animation-delay: 0.6s; }
+  .page-nav-link-text.third {
+    animation-delay: 0.7s; }
+  .page-nav-link-text.fourth {
+    animation-delay: 0.8s; }
+  .page-nav-link-text.fifth {
+    animation-delay: 0.9s; }
+  @media only screen and (min-width: 650px) {
+    .page-nav-link-text {
+      font-size: 32px; } }
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%); }
+  to {
+    transform: translateX(0px); } }
+
 .welcome-nav {
   position: absolute;
   bottom: 80px;
@@ -258,12 +309,15 @@ body {
   padding: 15px 0;
   opacity: 0.8; }
 
-.tour-show-wrapper {
+.tour-link {
   display: flex;
   align-items: center;
   padding: 15px;
   font-size: 24px;
-  color: white; }
+  color: white;
+  text-decoration: none; }
+  .tour-link:hover {
+    text-decoration: underline; }
 
 .tour-date {
   width: 60px;
@@ -274,9 +328,6 @@ body {
 
 .see-more-tour {
   display: none; }
-  @media only screen and (min-width: 650px) {
-    .see-more-tour {
-      display: flex; } }
 
 .tour-show-more-button, .shop-link-button {
   position: relative;
@@ -311,6 +362,14 @@ body {
   .tour-show-more-button:active, .shop-link-button:active {
     background-color: #ffffff;
     color: #000000; }
+
+.tour-tap-note, .shop-note {
+  width: 75%;
+  margin-top: 10px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-variant: small-caps;
+  text-transform: lowercase; }
 
 .news-section {
   width: 80%;
@@ -602,7 +661,7 @@ body {
     .shop-section {
       min-width: 500px;
       width: 80%;
-      max-width: 660px;
+      max-width: 800px;
       margin: 75px auto; } }
 
 .shop-heading {
@@ -630,6 +689,13 @@ body {
   transition: transform 0.3s; }
   .shop-item-image:hover {
     transform: scale(1.1); }
+
+.shop-albums {
+  width: 175px; }
+
+.shop-link-button {
+  display: inline-block;
+  text-decoration: none; }
 
 .social-footer {
   box-sizing: border-box;
@@ -713,8 +779,34 @@ body {
 
 .footer-flower-right {
   left: 0;
-  transform: translate(-45%, 45%); }
+  transform: translate(-45%, 45%);
+  animation: 0.5s 0.1s shake-right paused; }
 
 .footer-flower-left {
   right: 0;
-  transform: translate(45%, 45%); }
+  transform: translate(45%, 45%);
+  animation: 0.5s 0.1s shake-left paused; }
+
+@keyframes shake-left {
+  0% {
+    transform: translate(45%, 45%) rotate(0deg); }
+  20% {
+    transform: translate(45%, 45%) rotate(-5deg); }
+  40% {
+    transform: translate(45%, 45%) rotate(10deg); }
+  60% {
+    transform: translate(45%, 45%) rotate(-5deg); }
+  100% {
+    transform: translate(45%, 45%) rotate(0deg); } }
+
+@keyframes shake-right {
+  0% {
+    transform: translate(-45%, 45%) rotate(0deg); }
+  20% {
+    transform: translate(-45%, 45%) rotate(5deg); }
+  40% {
+    transform: translate(-45%, 45%) rotate(-10deg); }
+  60% {
+    transform: translate(-45%, 45%) rotate(5deg); }
+  100% {
+    transform: translate(-45%, 45%) rotate(0deg); } }

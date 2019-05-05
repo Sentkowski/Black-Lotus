@@ -19,6 +19,15 @@
           <h1 class="welcome-logo-heading">we<br>are</h1>
           <img class='welcome-logo' alt='Logo of Black Lotus' src='./images/bl-logo.svg'>
           <p class="welcome-tagline">Lorem ipsum lorem ipsum</p>
+          <nav class="page-nav">
+            <ul class="page-nav-list">
+              <li class="page-nav-link"><a class="page-nav-link-text first" href="#bloom">Bloom & Tour</a></li>
+              <li class="page-nav-link"><a class="page-nav-link-text second" href="#news">News</a></li>
+              <li class="page-nav-link"><a class="page-nav-link-text third" href="#about">About us</a></li>
+              <li class="page-nav-link"><a class="page-nav-link-text fourth" href="#merch">Merch</a></li>
+              <li class="page-nav-link"><a class="page-nav-link-text fifth" href="#contact">Contact</a></li>
+            </ul>
+          </nav>
         </header>
         <nav class="welcome-nav">
           <ul class="welcome-nav-icons">
@@ -34,7 +43,7 @@
           </ul>
         </nav>
       </section>
-      <section class="bloom-section">
+      <section class="bloom-section" id="bloom">
         <div class="bloom-flower-image"></div>
         <header class="bloom-header-section">
           <h2 class="bloom-heading">We're blooming</h2>
@@ -51,38 +60,53 @@
           <h3 class="tour-heading">Bloom Tour</h3>
           <ul class="tour-list">
             <li class="tour-show-wrapper">
-              <div class="tour-date">10.IV</div>
-              <div class="tour-place">Bydgoszcz, <span class="place-name">Szopa</span></div>
+              <a class="tour-link" href="">
+                  <div class="tour-date">10.IV</div>
+                  <div class="tour-place">Bydgoszcz, <span class="place-name">Szopa</span></div>
+              </a>
             </li>
             <li class="tour-show-wrapper">
-              <div class="tour-date">12.IV</div>
-              <div class="tour-place">Toruń, <span class="place-name">U Maćka</span></div>
+              <a class="tour-link" href="">
+                <div class="tour-date">12.IV</div>
+                <div class="tour-place">Toruń, <span class="place-name">U Maćka</span></div>
+              </a>
             </li>
             <li class="tour-show-wrapper">
-              <div class="tour-date">6.IV</div>
-              <div class="tour-place">Bydgoszcz, <span class="place-name">Szopa</span></div>
+              <a class="tour-link" href="">
+                <div class="tour-date">6.IV</div>
+                <div class="tour-place">Bydgoszcz, <span class="place-name">Szopa</span></div>
+              </a>
             </li>
             <li class="tour-show-wrapper">
-              <div class="tour-date">12.IV</div>
-              <div class="tour-place">Toruń, <span class="place-name">U Maćka</span></div>
-            </li>
-            <li class="tour-show-wrapper see-more-tour">
+              <a class="tour-link" href="">
                 <div class="tour-date">12.IV</div>
                 <div class="tour-place">Toruń, <span class="place-name">U Maćka</span></div>
+              </a>
             </li>
             <li class="tour-show-wrapper see-more-tour">
-                <div class="tour-date">12.IV</div>
-                <div class="tour-place">Toruń, <span class="place-name">U Maćka</span></div>
+              <a class="tour-link" href="">
+                  <div class="tour-date">12.IV</div>
+                  <div class="tour-place">Toruń, <span class="place-name">U Maćka</span></div>
+              </a>
             </li>
             <li class="tour-show-wrapper see-more-tour">
-                <div class="tour-date">12.IV</div>
-                <div class="tour-place">Toruń, <span class="place-name">U Maćka</span></div>
+              <a class="tour-link" href="">
+                  <div class="tour-date">12.IV</div>
+                  <div class="tour-place">Toruń, <span class="place-name">U Maćka</span></div>
+              </a>
+            </li>
+            <li class="tour-show-wrapper see-more-tour">
+              <a class="tour-link" href="">
+                  <div class="tour-date">12.IV</div>
+                  <div class="tour-place">Toruń, <span class="place-name">U Maćka</span></div>
+              </a>
             </li>
           </ul>
           <button class="tour-show-more-button">See more</button>
+          <p class="tour-tap-note">Tap on a show to check the tickets website</p>
         </div>
       </section>
-      <section class="news-section">
+      <section class="news-section" id="news">
         <h2 class="news-section-heading">News</h2>
         <ol class="news-list">
           <li class="news-item">
@@ -102,7 +126,7 @@
           </li>
         </ol>
       </section>
-      <section class="about-section">
+      <section class="about-section" id="about">
         <div class="about-background"></div>
         <ul class="band-photo-list">
           <li class="simon-photo members-photo"><div class="member-name">Simon</div></li>
@@ -120,15 +144,17 @@
           <img class="album-image" src="./images/victims-cover.svg" alt="Victim's album cover">
         </div>
       </section>
-      <section class='shop-section'>
+      <section class='shop-section' id="merch">
         <h2 class='shop-heading'>Merch</h2>
         <ul class="shop-items-images-list">
           <li><a href=""><img class="shop-item-image" src="./images/shirt-bloom.png"></a></li>
           <li><a href=""><img class="shop-item-image" src="./images/shirt-bl.png"></a></li>
+          <li><a href=""><img class="shop-item-image shop-albums" src="./images/albums-shop.png"></a></li>
         </ul>
-        <button class="shop-link-button">go to the shop</button>
+        <a href="" class="shop-link-button">go to the shop</a>
+        <p class="shop-note">More good stuff there!</p>
       </section>
-      <footer class="social-footer">
+      <footer class="social-footer" id="contact">
         <h2 class="footer-heading">Bloom with us on</h2>
         <nav class="footer-links">
           <ul class="footer-icons-wrapper">
@@ -150,8 +176,9 @@
         <div class="footer-logo"></div>
         <div class="footer-flower-right"></div>
         <div class="footer-flower-left"></div>
+        <script> </script>
       </footer>
     </main>
-    <!-- <script src="js/scripts.js"></script> -->
+    <script src="scripts.js"></script>
   </body>
 </html>
