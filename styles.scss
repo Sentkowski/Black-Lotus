@@ -65,6 +65,13 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    @media only screen and (max-width: 400px) {
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 85%, #000000 100%), url('images/welcome-bg-400.jpg');
+    }
+    @media only screen and (min-width: 401px) {
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 85%, #000000 100%), url('images/welcome-bg.jpg');
+    }
 }
 
 .welcome-header {
@@ -580,17 +587,41 @@ body {
 }
 
 .simon-photo {
-    background-image: url('images/git2.jpg');
+    @media only screen and (max-width: 400px) {
+        background-image: url('images/git2-400.jpg');
+    }
+    @media only screen and (min-width: 401px) and (max-width: 600px) {
+        background-image: url('images/git2-600.jpg');
+    }
+    @media only screen and (min-width: 601px) {
+        background-image: url('images/git2.jpg');
+    }
 }
 
 .chris-photo {
-    background-image: url('images/git1.jpg');
     border-left: 2px solid black;
+    @media only screen and (max-width: 400px) {
+        background-image: url('images/git1-400.jpg');
+    }
+    @media only screen and (min-width: 401px) and (max-width: 600px) {
+        background-image: url('images/git1-600.jpg');
+    }
+    @media only screen and (min-width: 601px) {
+        background-image: url('images/git1.jpg');
+    }
 }
 
 .andrew-photo {
-    background-image: url('images/perk2.jpg');
     border-left: 2px solid black;
+    @media only screen and (max-width: 400px) {
+        background-image: url('images/perk2-400.jpg');
+    }
+    @media only screen and (min-width: 401px) and (max-width: 600px) {
+        background-image: url('images/perk2-600.jpg');
+    }
+    @media only screen and (min-width: 601px) {
+        background-image: url('images/perk2.jpg');
+    }
 }
 
 .member-name {
