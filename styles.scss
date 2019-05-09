@@ -189,6 +189,10 @@ body {
     position: absolute;
     bottom: 80px;
     left: calc(50vw - 70px);
+
+    @media only screen and (min-width: 650px) {
+        left: 50px;
+    }
 }
 
 .welcome-nav-icons {

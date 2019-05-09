@@ -118,6 +118,9 @@ body {
   position: absolute;
   bottom: 80px;
   left: calc(50vw - 70px); }
+  @media only screen and (min-width: 650px) {
+    .welcome-nav {
+      left: 50px; } }
 
 .welcome-nav-icons {
   position: relative;
