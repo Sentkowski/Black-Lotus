@@ -61,6 +61,7 @@ body {
     position: relative;
     overflow: hidden;
     height: 100vh;
+    min-height: 600px;
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 85%, #000000 100%), url('images/welcome-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -124,7 +125,7 @@ body {
 
 .page-nav {
     position: absolute;
-    top: 20%;
+    top: 25%;
     left: 0px;
 }
 
@@ -191,7 +192,7 @@ body {
     left: calc(50vw - 70px);
 
     @media only screen and (min-width: 650px) {
-        left: 50px;
+        left: 200px;
     }
 }
 
@@ -559,13 +560,65 @@ body {
     }
 }
 
+.news-modal {
+    position: fixed;
+    display: none;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    overflow: hidden;
+    opacity: 0;
+    animation: appear 0.3s forwards;
+}
+
+.news-modal-wrapper {
+    position: relative;
+    overflow-y: auto;
+    width: 80vw;
+    padding: 0 10vw;
+    height: 100vh;
+
+    @media only screen and (min-width: 650px) {
+        width: 600px;
+        padding: 0 calc(50vw - 300px);
+    }
+}
+
+.news-modal-heading {
+    font-size: 32px;
+    color: rgba(255,255,255, 0.8);
+    margin: 40px 0;
+}
+
+.news-modal-paragraph {
+    font-size: 18px;
+    color: rgba(255,255,255, 0.8);
+    margin: 30px 0;
+    line-height: 1.4;
+}
+
+.news-modal-close-button {
+    position: relative;
+    display: block;
+    background-color: transparent;
+    padding: 3px 8px;
+    font-size: 24px;
+    color: rgba(255,255,255, 0.8);
+    font-variant: small-caps;
+    text-transform: lowercase;
+    margin: 50px auto;
+    @include cut-border(top);
+}
+
 .about-section {
     @media only screen and (min-width: 650px) {
         position: relative;
         display: flex;
         flex-direction: column;
         margin-bottom: 50px;
-
     }
 }
 
@@ -885,13 +938,13 @@ body {
 .footer-flower-right {
     left: 0;
     transform: translate(-45%, 45%);
-    animation: 0.5s 0.1s shake-right paused;
+    animation: 0.5s infinite shake-right paused;
 }
 
 .footer-flower-left {
     right: 0;
     transform: translate(45%, 45%);
-    animation: 0.5s 0.1s shake-left paused;
+    animation: 0.5s infinite shake-left paused;
 }
 
 @keyframes shake-left {
