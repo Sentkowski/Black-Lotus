@@ -622,7 +622,7 @@ body {
   color: rgba(255, 255, 255, 0.8);
   font-variant: small-caps;
   text-transform: lowercase;
-  margin: 50px auto;
+  margin: 50px auto 100px;
   border: 2px solid white;
   border-top: none;
   transition: background-color 0.1s, color 0.1s;
