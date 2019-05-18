@@ -134,7 +134,6 @@ function createTourDates() {
 function insertTourDates() {
     const tourDatesElements = Array.from(document.querySelectorAll(".tour-date"));
     const generatedDates = createTourDates();
-    console.log(tourDatesElements.length)
     for (let i = 0; i < tourDatesElements.length; i++) {
         const day = generatedDates[i].getDate();
         const month = romanize(generatedDates[i].getMonth() + 1);
