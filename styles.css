@@ -361,13 +361,12 @@ body {
   margin: 0 10px; }
 
 .tour-container {
-  width: 80%;
-  margin: auto; }
+  width: 90%;
+  margin-left: auto;
+  align-self: center; }
   @media only screen and (min-width: 650px) {
     .tour-container {
-      grid-area: tour;
-      justify-self: end;
-      width: 300px; } }
+      grid-area: tour; } }
 
 .tour-heading {
   padding-bottom: 5px;
@@ -383,10 +382,10 @@ body {
   opacity: 0.8; }
 
 .tour-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   padding: 15px;
-  font-size: 24px;
+  font-size: 18px;
   color: white;
   text-decoration: none; }
   .tour-link:hover {
@@ -397,7 +396,13 @@ body {
   text-align: right; }
 
 .tour-place {
-  padding-left: 20px; }
+  padding-left: 10px; }
+
+.place-name {
+  font-style: italic; }
+
+.tour-place.old, .tour-date.old {
+  text-decoration: line-through; }
 
 .see-more-tour {
   display: none;
@@ -622,7 +627,7 @@ body {
   color: rgba(255, 255, 255, 0.8);
   font-variant: small-caps;
   text-transform: lowercase;
-  margin: 50px auto 150px;
+  margin: 50px auto;
   border: 2px solid white;
   border-top: none;
   transition: background-color 0.1s, color 0.1s;
@@ -744,10 +749,13 @@ body {
       z-index: 1; } }
 
 .see-more-text {
-  display: none; }
+  display: none;
+  opacity: 0;
+  animation: appear 0.3s forwards; }
   @media only screen and (min-width: 650px) {
     .see-more-text {
-      display: block; } }
+      display: block;
+      opacity: 1; } }
 
 .about-read-more-button {
   position: relative;

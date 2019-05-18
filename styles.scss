@@ -401,13 +401,12 @@ body {
 }
 
 .tour-container {
-    width: 80%;
-    margin: auto;
+    width: 90%;
+    margin-left: auto;
+    align-self: center;
 
     @media only screen and (min-width: 650px) {
         grid-area: tour;
-        justify-self: end;
-        width: 300px;
     }
 }
 
@@ -427,10 +426,10 @@ body {
 }
 
 .tour-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     padding: 15px;
-    font-size: 24px;
+    font-size: 18px;
     color: white;
     text-decoration: none;
 
@@ -445,7 +444,15 @@ body {
 }
 
 .tour-place {
-    padding-left: 20px;
+    padding-left: 10px;
+}
+
+.place-name {
+    font-style: italic;
+}
+
+.tour-place.old, .tour-date.old {
+    text-decoration: line-through;
 }
 
 .see-more-tour {
@@ -609,7 +616,7 @@ body {
     color: rgba(255,255,255, 0.8);
     font-variant: small-caps;
     text-transform: lowercase;
-    margin: 50px auto 150px;
+    margin: 50px auto;
     @include cut-border(top);
 }
 
@@ -723,9 +730,12 @@ body {
 
 .see-more-text {
     display: none;
+    opacity: 0;
+    animation: appear 0.3s forwards;
 
     @media only screen and (min-width: 650px) {
         display: block;
+        opacity: 1;
     }
 }
 

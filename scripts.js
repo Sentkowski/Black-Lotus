@@ -2,6 +2,7 @@ let flowersPlayed = 0;
 let lastScrollPos = 0;
 
 window.addEventListener("load", function() {
+    insertTourDates();
     const tourButton = document.querySelector(".tour-show-more-button");
     tourButton.addEventListener("click", toggleTour);
     const singleButtons = document.querySelectorAll(".single-button");
@@ -16,6 +17,8 @@ window.addEventListener("load", function() {
     modalCloseButtons.forEach((button) => {
         button.addEventListener("click", closeModal)
     })
+    const aboutMoreButton = document.querySelector(".about-read-more-button");
+    aboutMoreButton.addEventListener("click", toggleAbout);
     createObservers();
 }, false);
 
@@ -26,7 +29,7 @@ function toggleTour() {
         tourDates.forEach(tour => {
             tour.style.display = 'block';
         });
-        tourButton.textContent = 'Collapse';
+        tourButton.textContent = 'See less';
     } else {
         tourDates.forEach(tour => {
             tour.style.display = 'none';
@@ -60,6 +63,22 @@ function closeModal() {
     document.body.scrollTop = lastScrollPos;
 }
 
+function toggleAbout() {
+    const aboutButton = document.querySelector(".about-read-more-button");
+    const paragraphs = document.querySelectorAll(".about-text.see-more-text");
+    if (paragraphs[0].style.display === 'none' || !paragraphs[0].style.display) {
+        paragraphs.forEach(par => {
+            par.style.display = 'block';
+        });
+        aboutButton.textContent = 'Hide';
+    } else {
+        paragraphs.forEach(par => {
+            par.style.display = 'none';
+        })
+        aboutButton.textContent = 'Keep reading';
+    }
+}
+
 function createObservers() {
     const leafRight =  document.querySelector(".footer-flower-right");
     const leafLeft =  document.querySelector(".footer-flower-left");
@@ -74,7 +93,7 @@ function createObservers() {
     observer.observe(leafLeft);
 }
 
-function handleIntersect(entries, observer) {
+function handleIntersect(entries) {
     entries.forEach(entry => {
         if (entry.intersectionRatio >= 0.25 && flowersPlayed !== 2 && entry.target.style.animationPlayState !== 'running') {
             entry.target.style.animationPlayState = 'running';
@@ -87,4 +106,38 @@ function handleIntersect(entries, observer) {
             flowersPlayed = 0;
         }
     });
+}
+
+function romanize(num) {
+    const lookup = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1};
+    let roman = '';
+    for (let i in lookup ) {
+      while ( num >= lookup[i] ) {
+        roman += i;
+        num -= lookup[i];
+      }
+    }
+    return roman;
+}
+
+function createTourDates() {
+    const base = new Date();
+    let tourDates = [];
+    for (let i = -2; i < 7; i++) {
+        let newDate = new Date();
+        newDate.setDate(base.getDate() + i *2);
+        tourDates.push(newDate);
+    }
+    return tourDates;
+}
+
+function insertTourDates() {
+    const tourDatesElements = Array.from(document.querySelectorAll(".tour-date"));
+    const generatedDates = createTourDates();
+    console.log(tourDatesElements.length)
+    for (let i = 0; i < tourDatesElements.length; i++) {
+        const day = generatedDates[i].getDate();
+        const month = romanize(generatedDates[i].getMonth() + 1);
+        tourDatesElements[i].innerHTML = `${day}.${month}`;
+    }
 }
